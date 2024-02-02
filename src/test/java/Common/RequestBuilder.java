@@ -24,5 +24,19 @@ public class RequestBuilder {
                 response();
     }
 
+    public static Response getBreedsListResponse() {
+        return given().
+                when().
+                contentType(Json_Content_Type).
+                log().
+                all().
+                get(Dogs_BaseURL+"/breeds/list/all").
+                then().
+                log().
+                all().
+                extract().
+                response();
+    }
+
 
 }
